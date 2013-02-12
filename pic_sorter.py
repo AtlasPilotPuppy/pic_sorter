@@ -21,12 +21,8 @@ def create_folder_struct(date):
     date_path = "%s/%s_%s" % (month_path,date.month, date.day)
     if date_path in created_dirs:
         return date_path
-    if not os.path.exists(year_path):
-        os.mkdir(year_path)
-    if not os.path.exists(month_path):
-        os.mkdir(month_path)
     if not os.path.exists(date_path):
-        os.mkdir(date_path)
+        os.mkdirs(date_path)
     created_dirs.append(date_path)
     return date_path
 
